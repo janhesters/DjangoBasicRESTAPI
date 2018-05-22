@@ -8,7 +8,7 @@ For a lack of a documentation, some brief words of introduction. All the provide
 
 ### About this project
 
-If you, like me, work with Django in your job, you probably create a lot of projects. I created this repository for my own convenience, because I wanted to _set up APIs for mobile apps and React apps very fast_. Feel free to use this repository to work fast (or even learn from it if you are newer to Django). If you want to help me and improve this repository, I would greatly appreciate pull requests and suggestions :) Thank you for your advice in advance! Best way too reach me for questions, advice or suggestions is through [Twitter](https://twitter.com/Geromekevin).
+If you, like me, work with Django in your job, you probably create a lot of projects. I created this repository for my own convenience, because I wanted to _set up APIs for mobile apps and React apps very fast_. Feel free to use this repository to work fast (or even learn from it if you are newer to Django). If you want to help me and improve this repository, I would greatly appreciate pull requests and suggestions :) Thank you for your advice in advance! Best way to reach me for questions, advice or suggestions is through [Twitter](https://twitter.com/Geromekevin).
 
 ### What is included?
 
