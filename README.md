@@ -163,7 +163,7 @@ coverage report
 
 Here are some tips I wished the docs would point out more clearly, which helped me host with AWS. These tips are probably not complete as I might have forgotten some steps. I just typed down all the struggles I remembered and how I fixed them. So if you go through this and
 
-The basic action you will have to take first is to set up an AWS account. If you've done that, go to `Services` at the top of the navbar and look for _IAM_. Click on IAM and go through the first five security steps:
+The basic action you will have to take first is to set up an AWS account. If you've done that, go to `Services` at the top of the navbar and look for **IAM**. Click on IAM and go through the first five security steps:
 
 1.  Delete your root access keys
 2.  Activate MFA on your root account
