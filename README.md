@@ -8,16 +8,16 @@ For a lack of a documentation, some brief words of introduction. All the provide
 
 ### About this project
 
-If you, like me, work with Django in your job, you probably create a lot of projects. I created this repository for my own convenience, because I wanted to _set up APIs for mobile apps and React apps very fast_. Feel free to use this repository to work fast (or even learn from it if you are newer to Django). If you want to help me and improve this repository, I would greatly appreciate pull requests and suggestions :) Thank you for your advice in advance! Best way to reach me for questions, advice or suggestions is through [Twitter](https://twitter.com/Geromekevin).
+If you, like me, work with Django in your job, you probably create a lot of projects. I created this repository for my own convenience, because I wanted to **set up APIs for mobile apps and React apps very fast**. Feel free to use this repository to work fast (or even learn from it if you are newer to Django). If you want to help me and improve this repository, I would greatly appreciate pull requests and suggestions :) Thank you for your advice in advance! Best way to reach me for questions, advice or suggestions is through [Twitter](https://twitter.com/Geromekevin).
 
 ### What is included?
 
-This repository provides a _basic Rest API_ that includes a _custom User model,_ _basic authentication routes_ and a _Facebook social authentication_ out of the box utilising various great packages like [djangorestframework](http://www.django-rest-framework.org/), [django-allauth](https://github.com/pennersr/django-allauth), [django-authtools](https://github.com/fusionbox/django-authtools), [django-model-utils](https://github.com/jazzband/django-model-utils) and [django-rest-auth](https://github.com/Tivix/django-rest-auth). Please read through their respective repositories for trouble shooting and learning.
-It also follows the _project layout_ from the book ["Two Scoops of Django 1.11"](https://www.twoscoopspress.com/products/two-scoops-of-django-1-11), which makes it _easy to collaborate_. (Make sure to check that book out if you are a beginner in Django and want to take your Django skills to the next level! At this point a _big thank you to Audrey and Daniel Roy Greenfeld_ for their amazing work.)
-Furthermore this project comes _staging and production settings tailored to AWS Elastic Beanstalk_, which makes it easy to host this project fast.
+This repository provides a **basic Rest API** that includes a **custom User model,** **basic authentication routes** and a **Facebook social authentication** out of the box utilising various great packages like [djangorestframework](http://www.django-rest-framework.org/), [django-allauth](https://github.com/pennersr/django-allauth), [django-authtools](https://github.com/fusionbox/django-authtools), [django-model-utils](https://github.com/jazzband/django-model-utils) and [django-rest-auth](https://github.com/Tivix/django-rest-auth). Please read through their respective repositories for trouble shooting and learning.
+It also follows the **project layout** from the book ["Two Scoops of Django 1.11"](https://www.twoscoopspress.com/products/two-scoops-of-django-1-11), which makes it **easy to collaborate**. (Make sure to check that book out if you are a beginner in Django and want to take your Django skills to the next level! At this point a **big thank you to Audrey and Daniel Roy Greenfeld** for their amazing work.)
+Furthermore this project comes **staging and production settings tailored to AWS Elastic Beanstalk**, which makes it easy to host this project fast.
 At the end of this README I will also provide some quick tips and tricks to help you host on AWS Elastic Beanstalk, which may help you, if you have never hosted there before. Let me know I was missing something so I can add it, or make a pull request with your additional instructions.
-Additionally it has a _preconfigured .gitignore._
-Last but not least it includes a handy _Makefile_ which was inspired by [this](https://github.com/kaleissin/django-makefile) old repository I found.
+Additionally it has a **preconfigured .gitignore.**
+Last but not least it includes a handy **Makefile** which was inspired by [this](https://github.com/kaleissin/django-makefile) old repository I found.
 
 ## Getting Started
 
@@ -95,7 +95,7 @@ After activating your virtual environment, install all the dependencies by runni
 pip install -r requirements/local.txt
 ```
 
-Note that the _awsebcli_ will automatically get installed!
+Note that the **awsebcli** will automatically get installed!
 Next set all the required environment variables for local development like this.
 
 ```
