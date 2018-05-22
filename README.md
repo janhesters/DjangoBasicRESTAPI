@@ -13,10 +13,15 @@ If you, like me, work with Django in your job, you probably create a lot of proj
 ### What is included?
 
 This repository provides a **basic Rest API** that includes a **custom User model,** **basic authentication routes** and a **Facebook social authentication** out of the box utilising various great packages like [djangorestframework](http://www.django-rest-framework.org/), [django-allauth](https://github.com/pennersr/django-allauth), [django-authtools](https://github.com/fusionbox/django-authtools), [django-model-utils](https://github.com/jazzband/django-model-utils) and [django-rest-auth](https://github.com/Tivix/django-rest-auth). Please read through their respective repositories for trouble shooting and learning.
+
 It also follows the **project layout** from the book ["Two Scoops of Django 1.11"](https://www.twoscoopspress.com/products/two-scoops-of-django-1-11), which makes it **easy to collaborate**. (Make sure to check that book out if you are a beginner in Django and want to take your Django skills to the next level! At this point a **big thank you to Audrey and Daniel Roy Greenfeld** for their amazing work.)
-Furthermore this project comes **staging and production settings tailored to AWS Elastic Beanstalk**, which makes it easy to host this project fast.
+
+Furthermore this project comes with **staging and production settings tailored to AWS Elastic Beanstalk**, which makes it easy to host this project fast.
+
 At the end of this README I will also provide some quick tips and tricks to help you host on AWS Elastic Beanstalk, which may help you, if you have never hosted there before. Let me know I was missing something so I can add it, or make a pull request with your additional instructions.
+
 Additionally it has a **preconfigured .gitignore.**
+
 Last but not least it includes a handy **Makefile** which was inspired by [this](https://github.com/kaleissin/django-makefile) old repository I found.
 
 ## Getting Started
@@ -26,6 +31,7 @@ Follow these instructions to set up this server on your local machine.
 ### Prerequisites
 
 Make sure you have postgesql installed and know how to start a new database. Start a database, take note of the name, the user, the password, the host and the port to set your environment variables.
+
 This project uses [redis-cache](https://niwinz.github.io/django-redis/latest/) for it's cache, so make sure you also have a redis instance running.
 You will also need python3 with pip and should use virtualenv.
 
@@ -119,14 +125,16 @@ Lastly create a super user:
 python manage.py createsuperuser
 ```
 
-## Working through the rest of the Todos
+## Working through the rest of the TODOs
 
 The code is marked with TODO comments. Go through them and insert your values for the respective code blocks.
 
 ## Setting up a social auth for Facebook
 
 First go to your admin and create a new [site](https://docs.djangoproject.com/en/1.11/ref/contrib/sites/). Click on `sites` and add a new one and using `localhost:8000` for the inputs.
+
 Next to https://developers.facebook.com/ and create an application. Take note of your `client ID` and your `client secret`. Go back to your admin and create a new `Social app`. Choose `Facebook` for the provider, and your `client ID` and your `client secret` and your `localhost:8000` site.
+
 For testing, in `myproject/accounts/api/tests/test_views.py` set `test_facebook=True` and set your `client ID` and your `client secret` as environment variables and obtain a `access_token` from using the [Access Token Tool](https://developers.facebook.com/tools/accesstoken/). Set `self.access_token` in `myproject/accounts/api/tests/test_views.py` and run the tests (view below). Done.
 
 ## Running the tests and using the Makefile
@@ -144,6 +152,7 @@ make showenv
 ```
 
 Note that this only works if you kept this projects structure. Otherwise modify the Makefile to your own needs.
+
 You can see the coverage by using:
 
 ```
@@ -153,6 +162,7 @@ coverage report
 ## Tips for hosting on AWS using Elastic Beanstalk
 
 Here are some tips I wished the docs would point out more clearly, which helped me host with AWS. These tips are probably not complete as I might have forgotten some steps. I just typed down all the struggles I remembered and how I fixed them. So if you go through this and
+
 The basic action you will have to take first is to set up an AWS account. If you've done that, go to `Services` at the top of the navbar and look for _IAM_. Click on IAM and go through the first five security steps:
 
 1.  Delete your root access keys
@@ -168,6 +178,7 @@ You want to generate an [EC2 key pair](https://docs.aws.amazon.com/AWSEC2/latest
 ### General hosting
 
 Use `eb init` and `eb create` to host on AWS. Choose the ssh key generated earlier. I will not provide more details here, since these commands are super well documented. Make sure to read to take the time to read through [awsebcli documentation](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html).
+
 You will need to set the follwoing environment variables (for production replace `staging` with `production`):
 
 ```
@@ -209,6 +220,7 @@ and `python manage.py migrate`.
 ### Using Redis for cache
 
 First generate an `ACCESS_KEY_ID` and a `SECRET_ACCESS_KEY`. In IAM click on users and choose the user you created for step 3. Click on Security credentials and then create an access key. Store it somewhere save and remember the values!
+
 Next create a Redis instance using Amazon Elasticache. For instructions see [the docs](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/GettingStarted.html). They are quite good for this. Then set the following environment variables:
 
 ```
@@ -243,6 +255,7 @@ eb setenv BUCKET_NAME=y0ur-sup3r-s3cr3t-k3y-l0l
 ```
 
 For the actual creation of the bucket I can recommend [this tutorial](https://www.codingforentrepreneurs.com/blog/create-a-blank-django-project/) by Justin Mitchel / Coding For Entrepreneurs. Just the settings part of this tutorial are a little outdated.
+
 After you created the bucket, connect to your instance using `eb ssh.` Repeat the steps to activate your virtual env and set all your secret keys. Then from within the `/opt/python/bundle/<app-version>/app` folder run:
 
 ```
